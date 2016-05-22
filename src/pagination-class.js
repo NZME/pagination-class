@@ -25,6 +25,9 @@ const OPTIONS = {
     separatorText:   '&hellip;'
 }
 
+/**
+ * Pagination class
+ */
 export default class Pagination extends EventAbstractClass {
     // region Constructor
 
