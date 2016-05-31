@@ -1,16 +1,16 @@
 sudo: false
 language: node_js
 node_js:
-  - '4'
-  - '6'
+- '4'
+- '6'
 cache:
   directories:
-    - node_modules
+  - node_modules
 deploy:
   provider: npm
   email: sysadmin@grabone.co.nz
   api_key:
-    secure: O9NUEuivApwQEHC+OXO2rn1cDev8QV7KeZMPsHc1stAUQAYfsrZOE1W/VlQGaRpW3TZUDNpOmOsMM+zSIdr04bcmiF/e4coVAiDTPcxKn1scX2O8wTI7u/vHHdu3OvCafPDXB+3X3+d9LCJPAHPceHXDiS6y38Znw88Jyt3ry7/GJQRM1F3+NG4fArwknA5Odd1fXulHPRYpDxtPteKxAM2T9Lntxm74VXN87zrrvNt2eXBnYULvIIdYZZBdpyjEmeS+j7gosx3vB3PXq87u5gQT1ozLFq6+gYEQ6Td03yDeqxlUsxdP4/OAd5sZbDAr6AbNxl6FNdC7R+aLq7GzJeA62WhN5E89KrAZHkkxbEDY4tJulZ2KsotWc6N4s2y9rwhPn8eI2RjJoj3N86CqaPPV9C4IJELmVCgi5+9LlMY+hwK6gXXalZw1nwHNV9hOHfQPJAkY9P2E9ANBDrammzZ8KUUNLWOG4jgDOO1RwdQpbr6MyrF2CPodUXqLnq8KWSEOroeB000vBsoc63/OuALq9A2x87VwAtWKVpvBYwWtka3LrzunqFCE3GyNd4IB+Hbqk3SlY7uaeakcE/tMzLaMm8YB+fuCDIgWZ6Ri4TOP2aLXOLN4N4bhb+Cbd4Cz0euvk4UJsgyfiBNljzgA/QR87NngfRHLxl/0HcEFtq4=
+    secure: I/yER95QhcQTGTcp+do0OYWZYJYSuHQ28wokxp+JkRPTpRkdShEKKXzLNgYk14s7jZyF85Gd9HZsGfZDr9Kd3K821uKysi8/BtYwRBGUtq+IjAn32wo7xuCRw9hWhh09rrKs/YFHTAbzGkTV0B+c2tbm/6o1HZypisqdzFBrLqyJCc6BuEB7p5lHvwGkVNHFV+VX005DUKPCcsyPjkpiwo9AXDhf40UKgRam0XP62rlGqTOXLdC/UdRZj70vtuiHm1V2dyMi3TEQp4kBenlwtpDYs+wZd75UN8y8LLS/oOD/O7LL8qFeSjnukO+b+OpyS+yO+Kkqfae+UqK+GIVZZ/5/mjyezxeyEUjKo8RU0TkwCoGZjbhgOJdcO+GJ3fBkFym/7NZYp/Fy78+leBrwrlnWa1swbD+C4rP5T6+Z6nYh5rtFUSDj8mruOeIqqnvbZsyJE0Ho418Y6elp2b+FfO3Kl7zPkUZBhP8s+zwwlubAwTk+WWlWGoAKLoKngM8L1I/D0D9oEFIvpF57QhI+DXFjsB/EjOmyuL8e0np1rnHmD23po7f0KlM6ugcGzLXc/XnuzbZ3bOgermW2dKLG3RbuBZZUTUVnLk2Xpv9A6OwFrLT7uxzQPHgJpzUWxZyOz4sI04v6l2xTXYLrLhk8BFMTLzCy2KkM/lpPvXAfJM0=
   on:
     tags: true
     repo: NZME/pagination-class
