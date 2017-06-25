@@ -1,4 +1,4 @@
-import EventAbstractClass from 'event-abstract-class'
+import EventEmitter from 'events';
 
 const OPTIONS = {
     listClass:           'pagination-list',
@@ -28,7 +28,7 @@ const OPTIONS = {
 /**
  * Pagination class
  */
-export default class Pagination extends EventAbstractClass {
+export default class Pagination extends EventEmiter {
     // region Constructor
 
     /**
@@ -142,14 +142,14 @@ export default class Pagination extends EventAbstractClass {
             ? 'forward'
             : 'backward'
 
-        this.trigger('pageclick:pre', {
+        this.emit('pageclick:pre', {
             page: page
         })
 
         this.hasUserInteracted = true
         this.goTo(page, direction)
 
-        this.trigger('pageclick:post', {
+        this.emit('pageclick:post', {
             page: page
         })
     }
@@ -160,14 +160,14 @@ export default class Pagination extends EventAbstractClass {
      * @param {MouseEvent} evt Event
      */
     handlePrevClick (evt) {
-        this.trigger('prevclick:pre', {
+        this.emit('prevclick:pre', {
             page: this.current
         })
 
         this.hasUserInteracted = true
         this.prev()
 
-        this.trigger('prevclick:post', {
+        this.emit('prevclick:post', {
             page: this.current
         })
     }
@@ -178,14 +178,14 @@ export default class Pagination extends EventAbstractClass {
      * @param {MouseEvent} evt Event
      */
     handleNextClick (evt) {
-        this.trigger('nextclick:pre', {
+        this.emit('nextclick:pre', {
             page: this.current
         })
 
         this.hasUserInteracted = true
         this.next()
 
-        this.trigger('nextclick:post', {
+        this.emit('nextclick:post', {
             page: this.current
         })
     }
@@ -310,7 +310,7 @@ export default class Pagination extends EventAbstractClass {
 
         let previousPage = this.current
 
-        this.trigger('goto:pre', {
+        this.emit('goto:pre', {
             newPage:   page,
             direction: direction
         })
@@ -326,7 +326,7 @@ export default class Pagination extends EventAbstractClass {
         this.definePageArray()
         this.render()
 
-        this.trigger('goto:post', {
+        this.emit('goto:post', {
             newPage:      this.current,
             previousPage: previousPage,
             direction:    direction
@@ -341,11 +341,11 @@ export default class Pagination extends EventAbstractClass {
             return
         }
 
-        this.trigger('prev:pre')
+        this.emit('prev:pre')
 
         this.goTo(this.current - 1, 'backward')
 
-        this.trigger('prev:post')
+        this.emit('prev:post')
     }
 
     /**
@@ -356,11 +356,11 @@ export default class Pagination extends EventAbstractClass {
             return
         }
 
-        this.trigger('next:pre')
+        this.emit('next:pre')
 
         this.goTo(this.current + 1, 'forward')
 
-        this.trigger('next:post')
+        this.emit('next:post')
     }
 
     // endregion Controls
